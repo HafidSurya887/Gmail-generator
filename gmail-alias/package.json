@@ -1,0 +1,10 @@
+{
+  "name": "gmail-alias-generator",
+  "version": "1.0.0",
+  "description": "Generator alias Gmail (titik dan plus), situs statis tanpa backend.",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Generator Alias Gmail</title>
+<meta name="description" content="Ubah satu Gmail jadi banyak alamat alias (titik dan plus). Semua masuk ke inbox yang sama.">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:title" content="Generator Alias Gmail">
+<meta property="og:description" content="Satu Gmail, banyak alias. Tanpa login, jalan di browser.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main>
+  <h1>Generator alias Gmail</h1>
+  <p class="sub">Satu Gmail asli, jadi banyak alamat. Semua email masuk ke inbox yang sama.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="em">Gmail asli</label>
+      <input id="em" type="email" inputmode="email" autocomplete="off" autocapitalize="off" placeholder="namakamu@gmail.com">
+    </div>
+    <div class="field">
+      <label>Jenis alias</label>
+      <div class="seg" role="radiogroup">
+        <span><input type="radio" name="m" id="m1" value="plus" checked><label for="m1">Plus (+)</label></span>
+        <span><input type="radio" name="m" id="m2" value="dot"><label for="m2">Titik (.)</label></span>
+        <span><input type="radio" name="m" id="m3" value="both"><label for="m3">Keduanya</label></span>
+      </div>
+    </div>
+    <div class="row field">
+      <div><label for="n">Jumlah</label><input id="n" type="number" inputmode="numeric" min="1" max="200" value="10"></div>
+      <div><label for="tag">Tag (opsional)</label><input id="tag" type="text" autocapitalize="off" placeholder="impulse"></div>
+    </div>
+    <p class="hint">Tag dipakai untuk jenis plus, hasilnya seperti nama+impulse1. Kosongkan untuk angka saja.</p>
+    <button class="go" id="gen" type="button">Buat alias</button>
+    <p class="err" id="err" role="alert"></p>
+  </div>
+
+  <div class="card" id="out" hidden>
+    <div class="head"><b id="cnt"></b><button class="ghost" id="all" type="button">Salin semua</button></div>
+    <ul id="list"></ul>
+  </div>
+
+  <div class="note">
+    <p>Login tetap pakai password Gmail aslimu, alias tidak punya password sendiri.</p>
+    <p>Tombol “Masuk dengan Google” hanya jalan dengan Gmail asli. Kalau situs menolak alias, coba jenis lain.</p>
+  </div>
+</main>
+<script src="/assets/app.js"></script>
+</body>
+</html>
